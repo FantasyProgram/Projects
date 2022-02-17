@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Application</title>
+    <style>
+        body{
+            background-color:rgb(31, 29, 32);
+            color:white;
+            font:40px Verdana;
+        }
+        #calculator
+        {
+            width:50vw;
+            height:80vh;
+            border:2px solid white;
+            display:grid;
+            grid-template-areas:'output output output output output'
+                                'numbers numbers numbers . .';
+        }
+        .button
+        {
+            background-color:black;
+            color:orange;
+            border-radius:10px;
+        }
+
+        .button:hover
+        {
+            border:1px solid white;
+        }
+        #numbers
+        {
+            float:left;
+            display:grid;
+            grid-template-columns: repeat(3,32%);
+            width:30vw;
+            height:40vh;
+            grid-area: numbers;
+          
+        }
+        #output
+        {
+           /* width:100vw*/
+            float:right;
+            grid-area: output;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id ="calculator">
+        <p id =output></p>
+        <div id="numbers" >   
+            <script>
+                const nums = document.getElementById("numbers");
+                const output = document.getElementById("output");
+                function createButton(textArg)
+                {
+                    let newButton = document.createElement('button');
+                    newButton.textContent = textArg;
+                    newButton.classList.add("button");
+                    newButton.addEventListener("click",(event)=>
+                    {
+                        output.innerText += (event.target.textContent);
+                    });
+                    return newButton;
+                }
+
+                for(i = 9 ; i>=0;i--)
+                {
+                    nums.appendChild(createButton(i));
+                }
+                
+
+
+            </script>
+        <div>
+
+
+    </div>
+
+
+
+
+</body>
+</html>
