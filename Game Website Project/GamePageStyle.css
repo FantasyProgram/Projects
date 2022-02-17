@@ -1,0 +1,17 @@
+body
+{
+    width:100vw;
+    height:100vh;
+    display:grid;
+    grid-template-columns: repeat(3,20%);
+    background-color: rgb(20, 18, 18);
+}
+
+#js-game_canvas
+{
+    border:1px solid rgb(34, 186, 224);
+    width:500px;
+    height :500px;
+    background-color:rgb(255, 255, 255)
+}
+
